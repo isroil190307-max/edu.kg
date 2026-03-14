@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="kg">
+<head>
+    <meta charset="UTF-8">
+    <title>География Тести - 1-сабак</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #eef5ee; padding: 20px; }
+        .test-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        /* Баскычтын жана теманын түстөрүн географияга ылайыкташтырдык */
+        h1 { color: #27ae60; text-align: center; }
+        .question { margin-bottom: 20px; text-align: left; padding: 15px; border-bottom: 1px solid #f0f0f0; }
+        .question b { color: #2c3e50; }
+        
+        .check-btn { 
+            background: #27ae60; 
+            color: white; 
+            border: none; 
+            padding: 12px 25px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 18px; 
+            width: 100%; 
+            transition: 0.3s;
+        }
+        .check-btn:hover { background: #219150; }
+        
+        #result { margin-top: 20px; font-weight: bold; font-size: 22px; text-align: center; color: #27ae60; }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: #27ae60; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="test-container">
+        <a href="geo-lesson1.html" class="back-btn">← Сабакка кайтуу</a>
+        <h1>🌍 География тести</h1>
+        <p style="text-align: center;">Жердин түзүлүшү боюнча билимиңизди текшериңиз.</p>
+
+        <hr>
+
+        <div class="question">
+            <p><b>1. Биз жашаган Жердин эң сырткы катмары кандай аталат?</b></p>
+            <input type="radio" name="g1" value="1"> Жер кыртышы <br>
+            <input type="radio" name="g1" value="0"> Мантия <br>
+            <input type="radio" name="g1" value="0"> Ядро
+        </div>
+
+        <div class="question">
+            <p><b>2. Жердин кайсы катмары эң чоң бөлүктү ээлейт жана ортодо жайгашкан?</b></p>
+            <input type="radio" name="g2" value="0"> Жер кыртышы <br>
+            <input type="radio" name="g2" value="1"> Мантия <br>
+            <input type="radio" name="g2" value="0"> Ядро
+        </div>
+
+        <div class="question">
+            <p><b>3. Жердин борборундагы эң ысык бөлүк бул:</b></p>
+            <input type="radio" name="g3" value="0"> Литосфера <br>
+            <input type="radio" name="g3" value="0"> Мантия <br>
+            <input type="radio" name="g3" value="1"> Ядро (Өзөк)
+        </div>
+
+        <button onclick="checkGeoTest()" class="check-btn">Жыйынтыкты текшерүү</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkGeoTest() {
+            let score = 0;
+            // Радио баскычтарды тандап алуу
+            let g1 = document.querySelector('input[name="g1"]:checked');
+            let g2 = document.querySelector('input[name="g2"]:checked');
+            let g3 = document.querySelector('input[name="g3"]:checked');
+
+            // Бардык суроолорго жооп берилгенин текшерүү
+            if (!g1 || !g2 || !g3) {
+                alert("Сураныч, бардык суроолорго жооп бериңиз!");
+                return;
+            }
+
+            // Упайларды эсептөө
+            if (g1.value === "1") score++;
+            if (g2.value === "1") score++;
+            if (g3.value === "1") score++;
+
+            // Жыйынтыкты экранга чыгаруу
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "Сиздин упайыңыз: " + score + " / 3";
+            
+            if(score === 3) {
+                resultDiv.style.color = "#27ae60";
+                resultDiv.innerHTML += "<br><small>Азаматсыз! Сиз теманы эң жакшы өздөштүрдүңүз! 🎉</small>";
+            } else {
+                resultDiv.style.color = "#e67e22";
+            }
+        }
+    </script>
+<!-- Default Statcounter code for bilim.kg
+https://isroil190307-max.github.io/bilim.kg/ -->
+<script type="text/javascript">
+var sc_project=13206444; 
+var sc_invisible=1; 
+var sc_security="d435eee0"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="hit counter"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13206444/0/d435eee0/1/" alt="hit counter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>

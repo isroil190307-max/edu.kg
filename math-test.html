@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kg">
+<head>
+    <meta charset="UTF-8">
+    <title>Математика Тести</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: sans-serif; background-color: #f4f7f6; padding: 20px; }
+        .test-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .question { margin-bottom: 20px; text-align: left; padding: 10px; border-bottom: 1px solid #eee; }
+        .check-btn { background: #28a745; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 18px; width: 100%; }
+        #result { margin-top: 20px; font-weight: bold; font-size: 22px; text-align: center; color: #007bff; }
+        .back-btn { display: inline-block; margin-top: 20px; color: #666; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="test-container">
+        <a href="matematika.html" class="back-btn">← Артка кайтуу</a>
+        <h1>🧮 Математикалык Тест</h1>
+        <p>Туура жоопторду белгилеп, текшериңиз.</p>
+
+        <hr>
+
+        <div class="question">
+            <p><b>1. 150 + 250 канча болот?</b></p>
+            <input type="radio" name="q1" value="0"> 300 <br>
+            <input type="radio" name="q1" value="1"> 400 <br>
+            <input type="radio" name="q1" value="0"> 450
+        </div>
+
+        <div class="question">
+            <p><b>2. Эгер 500дөн 120ны кемитсек, канча калат?</b></p>
+            <input type="radio" name="q2" value="1"> 380 <br>
+            <input type="radio" name="q2" value="0"> 480 <br>
+            <input type="radio" name="q2" value="0"> 320
+        </div>
+
+        <div class="question">
+            <p><b>3. (20 + 30) - 10 амалын аткарыңыз:</b></p>
+            <input type="radio" name="q3" value="0"> 30 <br>
+            <input type="radio" name="q3" value="1"> 40 <br>
+            <input type="radio" name="q3" value="0"> 50
+        </div>
+
+        <button onclick="checkTest()" class="check-btn">Жыйынтыкты текшерүү</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkTest() {
+            let score = 0;
+            let q1 = document.querySelector('input[name="q1"]:checked');
+            let q2 = document.querySelector('input[name="q2"]:checked');
+            let q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (q1 && q1.value === "1") score++;
+            if (q2 && q2.value === "1") score++;
+            if (q3 && q3.value === "1") score++;
+
+            let resultDiv = document.getElementById('result');
+            if (!q1 || !q2 || !q3) {
+                alert("Сураныч, бардык суроолорго жооп бериңиз!");
+            } else {
+                resultDiv.innerText = "Сиздин упайыңыз: " + score + " / 3";
+            }
+        }
+    </script>
+<!-- Default Statcounter code for bilim.kg
+https://isroil190307-max.github.io/bilim.kg/ -->
+<script type="text/javascript">
+var sc_project=13206444; 
+var sc_invisible=1; 
+var sc_security="d435eee0"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="hit counter"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13206444/0/d435eee0/1/" alt="hit counter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="kg">
+<head>
+    <meta charset="UTF-8">
+    <title>Математика</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Тест кооз көрүнүшү үчүн бир аз стиль */
+        .test-container { margin-top: 40px; padding: 20px; border-top: 2px solid #eee; }
+        .quiz-box { background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-radius: 8px; text-align: left; }
+        .check-btn { background-color: #28a745; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        #math-result { font-weight: bold; margin-top: 15px; font-size: 18px; }
+    </style>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('PWA ийгиликтүү катталды!', reg.scope))
+        .catch(err => console.log('Каттоодо ката кетти:', err));
+    });
+  }
+</script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🔢 Математика Бөлүмү</h1>
+            <nav><a href="index.html" class="nav-btn-link">🏠 Башкы бетке кайтуу</a></nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="library-section">
+            <div class="book-card">
+                <div class="book-icon">📕</div>
+                <h3>Математика 6-класс</h3>
+                <a href="books/matematika6.pdf" target="_blank" class="read-btn">Окуу (PDF)</a>
+            </div>
+        </section>
+    <h2>Темалар:</h2>
+    <div class="topic-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
+        <h3>1-тема: Сандарды кошуу жана кемитүү</h3>
+        <p>Бул темада кошуунун жана кемитүүнүн негизги эрежелерин үйрөнөсүз.</p>
+        <a href="math-lesson1.html" class="read-btn" style="color: rgb(194, 224, 41); font-weight: bold;">Теманы окуу →</a>
+    </div>
+</section>
+        
+
+        <section class="lesson-info" style="text-align: center; margin-top: 30px;">
+            <p>Теманы окуп бүттүңүзбү? Анда тесттен өтүңүз!</p>
+            <a href="math-test.html" style="background-color: #ffc107; color: black; padding: 15px 30px; text-decoration: none; border-radius: 10px; font-weight: bold; display: inline-block; border: 2px solid #e0a800;">
+                📝 Өзүнчө баракта тестти баштоо
+            </a>
+        
+    </main>
+    
+ <section class="game-link" style="text-align: center; margin-top: 20px; margin-bottom: 50px;">
+    <p>Мээни машыктырууну каалайсызбы? 🧠</p>
+    <a href="mathplay.html" style="background-color: #28a745; color: white; padding: 15px 30px; text-decoration: none; border-radius: 10px; font-weight: bold; display: inline-block; border: 2px solid #1e7e34; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        🎮 Математикалык оюнду баштоо
+    </a>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</body>
+</html>
